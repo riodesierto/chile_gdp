@@ -40,11 +40,16 @@ Ranking de las 9 economías con mayor PIB absoluto en 2020, en billones de USD. 
 ```
 chile_gdp/
 ├── chile_gdp_analysis.ipynb   # Notebook principal con todo el análisis
+├── scripts/                   # Scripts que generan cada gráfico (ejecutar desde la raíz)
+│   ├── 01_crecimiento_acumulado.py
+│   ├── 02_crecimiento_anual_presidentes.py
+│   ├── 03_chile_vs_corea.py
+│   └── 04_top_economias.py
 ├── data/
-│   ├── gdp_growth.csv          # Crecimiento anual del PIB por país (World Bank)
-│   ├── gdp_1960_2020.csv       # PIB absoluto por país en USD
-│   └── ...
-└── images/                     # Gráficas exportadas en alta resolución (300 dpi)
+│   ├── gdp_growth.csv         # Crecimiento anual del PIB por país (World Bank)
+│   └── gdp_1960_2020.csv      # PIB absoluto por país en USD
+├── images/                    # Gráficas exportadas en alta resolución (300 dpi)
+└── requirements.txt
 ```
 
 ## Datos
@@ -68,10 +73,13 @@ chile_gdp/
 
 ```bash
 # Instalar dependencias
-pip install pandas matplotlib jupyter
+pip install -r requirements.txt
 
-# Abrir el notebook
+# Opción A: abrir el análisis completo
 jupyter notebook chile_gdp_analysis.ipynb
+
+# Opción B: regenerar un gráfico puntual (desde la raíz del repo)
+python scripts/01_crecimiento_acumulado.py
 ```
 
 ## Stack
